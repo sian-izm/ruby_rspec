@@ -11,7 +11,8 @@ describe GridPoints do
         grid_points.add(grid_point_2)
       end
 
-      it { expect(grid_points.contains?(grid_point_1)).to be_truthy }
+      subject { grid_points.contains?(grid_point_1) }
+      it { is_expected.to be_truthy }
     end
 
     context "格子点集合に含まれない場合" do
@@ -24,7 +25,8 @@ describe GridPoints do
         grid_points.add(grid_point_2)
       end
 
-      it { expect(grid_points.contains?(grid_point_3)).to be_falsy }
+      subject { grid_points.contains?(grid_point_3) }
+      it { is_expected.to be_falsy }
     end
   end
 end
