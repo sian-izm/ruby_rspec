@@ -9,4 +9,8 @@ class GridPoint
   def notation
     "(#{x},#{y})"
   end
+
+  def same_coordinates?(grid_point)
+    grid_point.notation == notation
+  end
 end

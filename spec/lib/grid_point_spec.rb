@@ -34,4 +34,22 @@ describe GridPoint do
       it { is_expected.to eq "(1,2)" }
     end
   end
+
+  describe "#same_coordinates?" do
+    context "2つの格子点が同一" do
+      let(:grid_point_1) { GridPoint.new(4, 7) }
+      let(:grid_point_2) { GridPoint.new(4, 7) }
+
+      subject { grid_point_1.same_coordinates?(grid_point_2) }
+      it { is_expected.to be_truthy }
+    end
+
+    context "2つの格子点が異なる" do
+      let(:grid_point_1) { GridPoint.new(4, 7) }
+      let(:grid_point_2) { GridPoint.new(3, 6) }
+
+      subject { grid_point_1.same_coordinates?(grid_point_2) }
+      it { is_expected.to be_falsy }
+    end
+  end
 end
