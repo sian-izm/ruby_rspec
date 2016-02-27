@@ -52,4 +52,40 @@ describe GridPoint do
       it { is_expected.to be_falsy }
     end
   end
+
+  describe "#neighbor?" do
+
+    context "x + 1" do
+      let(:grid_point_1) { GridPoint.new(3, 7) }
+      let(:grid_point_2) { GridPoint.new(4, 7) }
+
+      subject { grid_point_1.neighbor?(grid_point_2) }
+      it { is_expected.to be_truthy }
+    end
+
+    context "x - 1" do
+      let(:grid_point_1) { GridPoint.new(3, 7) }
+      let(:grid_point_2) { GridPoint.new(2, 7) }
+
+      subject { grid_point_1.neighbor?(grid_point_2) }
+      it { is_expected.to be_truthy }
+    end
+
+    context "y + 1" do
+      let(:grid_point_1) { GridPoint.new(3, 7) }
+      let(:grid_point_2) { GridPoint.new(3, 8) }
+
+      subject { grid_point_1.neighbor?(grid_point_2) }
+      it { is_expected.to be_truthy }
+    end
+
+    context "y - 1" do
+      let(:grid_point_1) { GridPoint.new(3, 7) }
+      let(:grid_point_2) { GridPoint.new(3, 6) }
+
+      subject { grid_point_1.neighbor?(grid_point_2) }
+      it { is_expected.to be_truthy }
+    end
+
+  end
 end
