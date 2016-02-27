@@ -5,4 +5,8 @@ class GridPoint
     @x = x
     @y = y
   end
+
+  def notation
+    "(#{x},#{y})"
+  end
 end
