@@ -87,5 +87,12 @@ describe GridPoint do
       it { is_expected.to be_truthy }
     end
 
+    context "同一座標のとき" do
+      let(:grid_point_1) { GridPoint.new(3, 7) }
+      let(:grid_point_2) { GridPoint.new(3, 7) }
+
+      subject { grid_point_1.neighbor?(grid_point_2) }
+      it { is_expected.to be_falsy }
+    end
   end
 end
