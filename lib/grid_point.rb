@@ -15,6 +15,12 @@ class GridPoint
   end
 
   def neighbor?(grid_point)
-   ((grid_point.x - x).abs == 1 || (grid_point.y - y).abs == 1) and same_coordinates?(grid_point) == false
+    less_than_1_point?(grid_point) && !same_coordinates?(grid_point)
+  end
+
+  private
+
+  def less_than_1_point?(grid_point)
+    ((grid_point.x - x).abs == 1) || ((grid_point.y - y).abs == 1)
   end
 end
