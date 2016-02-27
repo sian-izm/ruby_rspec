@@ -1,12 +1,12 @@
 describe GridPoint do
+  let(:grid_point) { GridPoint.new(x, y) }
 
   describe "#x" do
     let(:x) { 4 }
     let(:y) { 7 }
 
     it do
-      obj = GridPoint.new(x, y)
-      expect(obj.x).to eq(4)
+      expect(grid_point.x).to eq(4)
     end
   end
 
@@ -15,8 +15,7 @@ describe GridPoint do
     let(:y) { 7 }
 
     it do
-      obj = GridPoint.new(x, y)
-      expect(obj.y).to eq(7)
+      expect(grid_point.y).to eq(7)
     end
   end
 
@@ -26,8 +25,7 @@ describe GridPoint do
       let(:y) { 7 }
 
       it do
-        obj = GridPoint.new(x, y)
-        expect(obj.notation).to eq("(4,7)")
+        expect(grid_point.notation).to eq("(4,7)")
       end
     end
 
@@ -36,8 +34,7 @@ describe GridPoint do
       let(:y) { 2 }
 
       it do
-        obj = GridPoint.new(x, y)
-        expect(obj.notation).to eq("(1,2)")
+        expect(grid_point.notation).to eq("(1,2)")
       end
     end
   end
