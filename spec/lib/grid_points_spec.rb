@@ -1,14 +1,10 @@
 describe GridPoints do
-  let(:grid_points) { GridPoints.new() }
+  let(:grid_points) { GridPoints.new(initial_grid_points) }
 
   describe "#contains?" do
     let(:grid_point_1) { GridPoint.new(4, 7) }
     let(:grid_point_2) { GridPoint.new(3, 8) }
-
-    before do
-      grid_points.add(grid_point_1)
-      grid_points.add(grid_point_2)
-    end
+    let(:initial_grid_points) { [grid_point_1, grid_point_2] }
 
     context "格子点集合に含まれる場合" do
       let(:target_grid_point) { GridPoint.new(4, 7) }
