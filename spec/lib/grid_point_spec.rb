@@ -94,5 +94,30 @@ describe GridPoint do
       subject { grid_point_1.neighbor?(grid_point_2) }
       it { is_expected.to be_falsy }
     end
+
+    context "右に二つ以上離れている" do
+      let(:grid_point_1) { GridPoint.new(3, 7) }
+      let(:grid_point_2) { GridPoint.new(5, 7) }
+
+      subject { grid_point_1.neighbor?(grid_point_2) }
+      it { is_expected.to be_falsy }
+    end
+
+    context "上に二つ以上離れている" do
+      let(:grid_point_1) { GridPoint.new(3, 7) }
+      let(:grid_point_2) { GridPoint.new(3, 11) }
+
+      subject { grid_point_1.neighbor?(grid_point_2) }
+      it { is_expected.to be_falsy }
+    end
+
+    context "上に1つ、右に1つ離れている" do
+      let(:grid_point_1) { GridPoint.new(3, 7) }
+      let(:grid_point_2) { GridPoint.new(4, 8) }
+
+      subject { grid_point_1.neighbor?(grid_point_2) }
+      it { is_expected.to be_falsy }
+    end
+
   end
 end
